@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import request, jsonify
-from flask_mongoengine import MongoEngine
+#from flask_mongoengine import MongoEngine
 
 app = Flask(__name__)
 
@@ -15,6 +15,7 @@ def printname():
 @app.route('/fizzbuzz')
 def fizzbuzz():
     i = request.args.get('input')
+    i = int(i)
     if i % 15 == 0:
         return jsonify(result="FizzBuzz")
     elif i % 3 == 0:
