@@ -4,6 +4,14 @@ from flask import request, jsonify
 
 app = Flask(__name__)
 
+@app.route('/printname')
+def printname():
+    name_arg = request.args.get('name')
+
+    print(name_arg)
+
+    return jsonify(result=name_arg)
+
 @app.route('/fizzbuzz')
 def fizzbuzz():
     try:
