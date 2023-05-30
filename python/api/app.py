@@ -16,13 +16,13 @@ def printname():
 def fizzbuzz():
     i = request.args.get('input')
     if i % 15 == 0:
-        return "FizzBuzz"
+        return jsonify(result="FizzBuzz")
     elif i % 3 == 0:
-        return "Fizz"
+        return jsonify(result="Fizz")
     elif i % 5 == 0:
-        return "Buzz"
+        return jsonify(result="Buzz")
     else:
-        return i
+        return jsonify(result=i)
 
 if __name__ == "__main__":
     app.run(debug=True, port=7600)
